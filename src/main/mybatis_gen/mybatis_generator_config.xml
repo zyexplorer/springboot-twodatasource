@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration >
+
+    <classPathEntry location="mysql-connector-java-5.1.34.jar" />
+
+    <context id="jingdaka"  targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!-- 鲸打卡jdbc连接信息 -->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://106.14.194.171:59027/photo_backend"
+                        userId="root" password="XZhenzhuangtodb" />
+
+        <javaModelGenerator targetPackage="com.jingdaka.photo_backend.entity" targetProject="gen"/>
+
+        <sqlMapGenerator targetPackage="/" targetProject="../resources/mappers" />
+
+        <javaClientGenerator targetPackage="com.jingdaka.photo_backend.dao" targetProject="gen" type="XMLMAPPER" />
+
+         <table schema="photo_backend" tableName="class_cues" domainObjectName="ClassCues">
+             <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+         </table>-->
+
+        <!--master库-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/master"
+                        userId="root" password="test123456"/>
+        <!--建议只生成实体类，不生成基础sql以及接口，接口直接继承Mapper接口-->
+        <javaModelGenerator targetPackage="com.zy.springboottwodatasource.domain.master" targetProject="gen"/>
+
+        <!--<sqlMapGenerator targetPackage="/" targetProject="../resources/mapper/master" />-->
+        <!--<javaClientGenerator targetPackage="com.zy.springboottwodatasource.dao.master" targetProject="gen" type="XMLMAPPER" />-->
+
+        <table schema="master" tableName="master_user" domainObjectName="MasterUser">
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+        </table>
+
+
+        <!--cluster库-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/cluster"
+                        userId="root" password="test123456"/>
+
+        &lt;!&ndash;建议只生成实体类，不生成基础sql以及接口，接口直接继承Mapper接口&ndash;&gt;
+        <javaModelGenerator targetPackage="com.zy.springboottwodatasource.domain.cluster" targetProject="gen"/>
+
+        &lt;!&ndash;<sqlMapGenerator targetPackage="/" targetProject="../resources/mapper/cluster" />&ndash;&gt;
+        &lt;!&ndash;<javaClientGenerator targetPackage="com.zy.springboottwodatasource.dao.cluster" targetProject="gen" type="XMLMAPPER" />&ndash;&gt;
+
+        <table schema="cluster" tableName="cluster_user" domainObjectName="ClusterUser">
+            <generatedKey column="id" sqlStatement="MySql" type="post" identity="true"/>
+        </table>-->
+    </context>
+
+</generatorConfiguration>

@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  address: 0.0.0.0
+  compression:
+    enabled: true
+  tomcat:
+    max-swallow-size: -1
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto
+  servlet:
+    context-path: /
+
+### 双数据源配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+    url: jdbc:mysql://127.0.0.1:3306/master?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: test123456
+
+    url2: jdbc:mysql://127.0.0.1:3306/cluster?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    username2: root
+    password2: test123456
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8

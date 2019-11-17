@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zy.springboottwodatasource.dao.cluster.ClusterUserMapper" >
+
+  <!--继承了Mapper这个接口后，xml文件中只注重需要的sql-->
+
+
+</mapper>
